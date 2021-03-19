@@ -1,6 +1,3 @@
-package exercicio4;
-
-
 import javax.swing.JOptionPane;
 
 
