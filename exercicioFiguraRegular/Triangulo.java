@@ -1,14 +1,13 @@
 
 public class Triangulo extends FiguraRegular{
 
-	private static float raiz3 = (float) Math.sqrt(3);
 
 	public Triangulo(float lado) {
 		super(lado);
 	}
 
 	public float calcularArea() {
-		float area = (super.calcularArea() * raiz3 ) / 4;
+		float area = (super.calcularArea() * super.raiz3 ) / 4;
 		return area;
 	}
 
