@@ -1,0 +1,68 @@
+--Polimorfismo por sobrescrita de métodos--
+
+    ** É quando a Mesma Assinatura que está dentro da classe mãe vai para Classes Diferentes e são sobrescrita
+       com outras funcionalidades, com outras palavras, a sobrescrita de Métodos pode ser classificada como 
+       polimorfismo de inclusão. É quando um método um método herdado de uma classe, temos uma sobrescrita de método.
+       Uma chamada ao método herdado não mais será interceptada por esse novo método de mesmo nome. **
+
+    Ex.: 
+            *na classe principal*
+        public class principal {
+            public static void barulho(Animal animal) {
+                animal.fazerBArulho();
+            }
+
+            public static void main(String[] args) {
+                Cachorro cao =  new Cachorro();
+                Galinho gal = new Galinha();
+
+                barulho(cao);
+                barulho(gal);
+            }
+        }
+            *classe mãe*
+        public class Animal {
+            public void fazerBarulho() {
+                System.out.println("BARULHO");
+            }
+        }
+            *subclasse*
+        public class Cachorro extends Animal {
+            public void fazerBarulho() {
+                System.out.println("Au Au");
+            }
+        }
+
+            *subclasse*
+        public class Galinha extends Animal {
+            public void fazerBarulho() {
+                System.out.println("Co Co");
+            }
+        }
+
+
+--Polimorfismo por sobrecarga de método -- 
+    ** É quando há Assinaturas Diferentes com mesmo nome e que faz métodos diferentes estão em uma mesma Classe, para ocorrer as 
+       diferentes Assinaturas, mudamos os seus pramêtros, polimorfismo de Sobrecarga permite a existência de vários 
+       métodos de mesmo nome, porém com assinaturas levemente diferentes, ou seja, variando no número e tipo de argumentos. 
+       Ficaria a cargo do compilador escolher de acordo com as listas de argumentos os procedimentos ou métodos a serem executados. **
+    
+    Ex.: 
+            *na classe mãe*
+        public void reagir(String frase) {
+            if(frase.equals("Toma Água!") || frase.equals("Olá!")) {
+                System.out.println("Abanar e Latir");
+            } else {
+                System.out.println("Rosnar");
+            }
+        }
+
+        public void reagir(int hora, int min) {
+            if(hora > 20) {
+                System.out.println("Abanar");
+            } else if (hora >= 18) {
+                System.out.println("Ignorar");
+            } else {
+                System.out.println("Abanar e Latir");
+            }
+        }
